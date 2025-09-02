@@ -2,6 +2,8 @@ import React from 'react'
 //  import dev_img from '/images/Developer.jpg'
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { useEffect , useState } from 'react';
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
 
@@ -98,7 +100,7 @@ useEffect(() => {
             ' />
             </a>
           </div>
-          <a href="/about"  >
+          <Link to="/about"  >
             <button 
            
             className='
@@ -109,7 +111,7 @@ useEffect(() => {
         transition-all duration-300
         animate-pulse
             '> Contact </button>
-          </a>
+          </Link>
         </div>
       </div>
 
