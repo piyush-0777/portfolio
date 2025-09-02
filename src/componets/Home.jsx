@@ -1,5 +1,5 @@
 import React from 'react'
-// import dev_img from '../images/Developer.jpg'
+//  import dev_img from '/images/Developer.jpg'
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { useEffect , useState } from 'react';
 
@@ -115,7 +115,7 @@ useEffect(() => {
 
       {/* image */}
       <div className=' md:w-[50%] w-full h-[90vh] '>
-        <img className='h-[90vh] w-[100%] ' src='/images/Developer.jpg' alt="" />
+        <img className='h-[90vh] w-[100%] ' src='https://res.cloudinary.com/dylqjvfkf/image/upload/v1756801010/developer_e5h6ib.jpg' alt="" />
       </div>
     </div>
   )
