@@ -100,7 +100,7 @@ useEffect(() => {
             ' />
             </a>
           </div>
-          <Link to="/about"  >
+          <Link to="/contact"  >
             <button 
            
             className='
