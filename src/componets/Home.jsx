@@ -2,10 +2,11 @@ import React from 'react'
 //  import dev_img from '/images/Developer.jpg'
 import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { useEffect , useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 
 
-const Home = () => {
+const Home = ({setPaje}) => {
+  const navigate = useNavigate();
 
   const name = "ull Stack Developer"; // 👈 your name
   const [subIndex, setSubIndex] = useState(0);
@@ -33,6 +34,11 @@ useEffect(() => {
     console.log(e)
   }
 
+  const gotoContactPaje = () => {
+    setPaje('contact');
+    navigate("/contact");
+  }
+
   return (
     <div className='bg-black text-white h-[90vh] w-screen px-2 md:flex select-none
     md:overflow-hidden overflow-y-scroll
@@ -54,8 +60,9 @@ useEffect(() => {
               
           <p className='text-xl font-mono'>Bulding dynamic and responsive web applications with a passion for clean code and intuitive user experience.</p>
    
+        <div className='flex gap-12 flex-col sm:flex-row '>
         <div className='flex gap-12  '>
-          <div 
+              <div 
           className='
           cursor-pointer text-2xl
             md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full flex justify-center items-center 
@@ -66,8 +73,8 @@ useEffect(() => {
              animate-pulse
           '>
            <a href="https://www.linkedin.com/in/gecgce2024piyush" target='_blank'> <FaLinkedin className='text-2xl blur-none' /></a>
-          </div>
-          <div
+             </div>
+             <div
           className='
           cursor-pointer text-2xl
              md:w-[50px] md:h-[50px] w-[40px] h-[40px] rounded-full flex justify-center items-center 
@@ -80,8 +87,8 @@ useEffect(() => {
               <a href="https://github.com/piyush-0777" target='_blank'>
             <FaGithub className='text-2xl blur-none' />
             </a>
-          </div>
-           <div
+              </div>
+              <div
           className='
           cursor-pointer  text-2xl 
             backdrop-blur-md bg-blur-xs  md:w-[50px] md:h-[50px] w-[40px] h-[40px]
@@ -99,10 +106,11 @@ useEffect(() => {
             
             ' />
             </a>
+             </div>
           </div>
-          <Link to="/contact"  >
+          <div>
             <button 
-           
+           onClick={gotoContactPaje}
             className='
             text-xl cursor-pointer shadow- p-4 rounded-xl w-[150px] px-5
             bg-gradient-to-r from-pink-500 to-purple-500 
@@ -111,7 +119,7 @@ useEffect(() => {
         transition-all duration-300
         animate-pulse
             '> Contact </button>
-          </Link>
+      </div>
         </div>
       </div>
 

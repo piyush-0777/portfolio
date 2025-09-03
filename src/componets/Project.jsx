@@ -2,6 +2,7 @@ import React from 'react'
 import Projectpost from './Projectpost'
 import { useEffect } from 'react'
 import { useState } from 'react';
+import Loader from '../componets/Loader'
 
 
 const Project = () => {
@@ -11,6 +12,7 @@ const Project = () => {
 
 
 const [projects , setProjects] = useState([]);
+const [loding , setLoding] = useState(true);
 const API_URL = import.meta.env.VITE_API_KEY;
 
 
@@ -22,10 +24,16 @@ const fetchproject =async() => {
 })
 .then((Response=> Response.json()))
 .then(data=>{
-  console.log('data' , data)
+  // console.log('data' , data)
   setProjects(data);
+  setLoding(false);
   // console.log(projects);
 
+})
+.catch((error)=>{
+  console.log(error);
+ console.error('failed to lord data');
+ alert('filed to lord data');
 })
 
 }
@@ -44,16 +52,18 @@ useEffect(()=>{
       <div className='w-full text-center m-3 mb-20 '>
         <h2 className='text-5xl  from-pink-500 to-purple-500'>Projects</h2>
       </div>
-
-      <div className='flex flex-col gap-5'>
+      {loding?<Loader/> : <div className='flex flex-col gap-5'>
       {projects && projects.map((project)=>{
        return <Projectpost project = {project}/>
       })}
 
-        {/* <Projectpost /> */}
+        
         
 
-      </div>
+      </div> }
+
+      
+      
     </div>
   )
 }

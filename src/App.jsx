@@ -17,7 +17,7 @@ function App() {
       <Router>
       <Navbar paje={paje} setPaje={setPaje} />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home setPaje={setPaje} />} />
         <Route path='/project' element={<Project/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
