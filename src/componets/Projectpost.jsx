@@ -57,8 +57,8 @@ const Projectpost = ({project}) => {
         >
           <FaGithub /> Source Code
         </a>
-        {project?.liveurl && <a
-          href={project?.liveurl}
+        { <a
+          href='http://localhost:5173/'
           target='_blank'
           className="flex items-center gap-2
            bg-gradient-to-r from-pink-500 to-purple-500 

@@ -12,6 +12,7 @@ const Contact = () => {
   });
 
   const [formStatus, setFormStatus] = useState('');
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]:e.target.value});
@@ -31,10 +32,12 @@ const templateID =import.meta.env.VITE_EMAIL_TEMPLATE_ID;
       .then(
         () => {
           console.log('SUCCESS!');
+          
            setFormStatus('');
         },
         (error) => {
           console.log('FAILED...', error);
+          
         },
       );
 
@@ -44,7 +47,7 @@ const templateID =import.meta.env.VITE_EMAIL_TEMPLATE_ID;
       lastName: '',
       email: '',
       message: '',
-    });
+    })
     // Hide the status message after a few seconds
    
   };
